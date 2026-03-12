@@ -6,4 +6,9 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
+  <PropertyGroup>
+    <STS2GamePath>/Users/allenzhang/Library/Application Support/Steam/steamapps/common/Slay the Spire 2</STS2GamePath>
+    <GodotExePath>/Applications/Godot.app/Contents/MacOS/Godot</GodotExePath>
+  </PropertyGroup>
+
 </Project>
