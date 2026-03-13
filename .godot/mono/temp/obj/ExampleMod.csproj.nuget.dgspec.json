@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "/private/var/folders/4t/sf7c1t496vs6h7rsw0k_rh_80000gn/T/dave-tasks/1773360910203/ExampleMod.csproj": {}
+    "/private/var/folders/4t/sf7c1t496vs6h7rsw0k_rh_80000gn/T/dave-tasks/1773362759166/ExampleMod.csproj": {}
   },
   "projects": {
-    "/private/var/folders/4t/sf7c1t496vs6h7rsw0k_rh_80000gn/T/dave-tasks/1773360910203/ExampleMod.csproj": {
+    "/private/var/folders/4t/sf7c1t496vs6h7rsw0k_rh_80000gn/T/dave-tasks/1773362759166/ExampleMod.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/private/var/folders/4t/sf7c1t496vs6h7rsw0k_rh_80000gn/T/dave-tasks/1773360910203/ExampleMod.csproj",
+        "projectUniqueName": "/private/var/folders/4t/sf7c1t496vs6h7rsw0k_rh_80000gn/T/dave-tasks/1773362759166/ExampleMod.csproj",
         "projectName": "ExampleMod",
-        "projectPath": "/private/var/folders/4t/sf7c1t496vs6h7rsw0k_rh_80000gn/T/dave-tasks/1773360910203/ExampleMod.csproj",
+        "projectPath": "/private/var/folders/4t/sf7c1t496vs6h7rsw0k_rh_80000gn/T/dave-tasks/1773362759166/ExampleMod.csproj",
         "packagesPath": "/Users/allenzhang/.nuget/packages/",
-        "outputPath": "/private/var/folders/4t/sf7c1t496vs6h7rsw0k_rh_80000gn/T/dave-tasks/1773360910203/.godot/mono/temp/obj/",
+        "outputPath": "/private/var/folders/4t/sf7c1t496vs6h7rsw0k_rh_80000gn/T/dave-tasks/1773362759166/.godot/mono/temp/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "/Users/allenzhang/.nuget/NuGet/NuGet.Config"
