@@ -1,0 +1,85 @@
+{
+  "format": 1,
+  "restore": {
+    "/private/var/folders/4t/sf7c1t496vs6h7rsw0k_rh_80000gn/T/dave-tasks/1773360910203/ExampleMod.csproj": {}
+  },
+  "projects": {
+    "/private/var/folders/4t/sf7c1t496vs6h7rsw0k_rh_80000gn/T/dave-tasks/1773360910203/ExampleMod.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/private/var/folders/4t/sf7c1t496vs6h7rsw0k_rh_80000gn/T/dave-tasks/1773360910203/ExampleMod.csproj",
+        "projectName": "ExampleMod",
+        "projectPath": "/private/var/folders/4t/sf7c1t496vs6h7rsw0k_rh_80000gn/T/dave-tasks/1773360910203/ExampleMod.csproj",
+        "packagesPath": "/Users/allenzhang/.nuget/packages/",
+        "outputPath": "/private/var/folders/4t/sf7c1t496vs6h7rsw0k_rh_80000gn/T/dave-tasks/1773360910203/.godot/mono/temp/obj/",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "/Users/allenzhang/.nuget/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net9.0"
+        ],
+        "sources": {
+          "/opt/homebrew/Cellar/dotnet@9/9.0.115/libexec/library-packs": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net9.0": {
+            "targetAlias": "net9.0",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
+        },
+        "SdkAnalysisLevel": "9.0.100"
+      },
+      "frameworks": {
+        "net9.0": {
+          "targetAlias": "net9.0",
+          "dependencies": {
+            "Godot.SourceGenerators": {
+              "target": "Package",
+              "version": "[4.5.1, )",
+              "autoReferenced": true
+            },
+            "GodotSharp": {
+              "target": "Package",
+              "version": "[4.5.1, )",
+              "autoReferenced": true
+            },
+            "GodotSharpEditor": {
+              "target": "Package",
+              "version": "[4.5.1, )",
+              "autoReferenced": true
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "/opt/homebrew/Cellar/dotnet@9/9.0.115/libexec/sdk/9.0.115/PortableRuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}

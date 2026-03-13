@@ -8,6 +8,11 @@
   <Import Project="local.props" />
 
   <ItemGroup>
+    <!-- Exclude game source code from compilation — it's reference-only, types come from sts2.dll -->
+    <Compile Remove="game_src_code/**/*.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
     <Reference Include="0Harmony">
       <HintPath>$(STS2GamePath)/SlayTheSpire2.app/Contents/Resources/data_sts2_macos_arm64/0Harmony.dll</HintPath>
     </Reference>
