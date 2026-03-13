@@ -28,8 +28,8 @@
 
     <!-- Copy both the PCK and DLL to the mods directory (game requires both) -->
     <Copy SourceFiles="$(OutputPath)$(AssemblyName).dll"
-          DestinationFolder="$(STS2GamePath)/mods/$(AssemblyName)" />
+          DestinationFolder="$(STS2GamePath)/SlayTheSpire2.app/Contents/MacOS/mods/$(AssemblyName)" />
     <Copy SourceFiles="$(OutputPath)$(AssemblyName).pck"
-          DestinationFolder="$(STS2GamePath)/mods/$(AssemblyName)" />
+          DestinationFolder="$(STS2GamePath)/SlayTheSpire2.app/Contents/MacOS/mods/$(AssemblyName)" />
   </Target>
 </Project>
