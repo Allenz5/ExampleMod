@@ -7,6 +7,15 @@
 
   <Import Project="local.props" />
 
+  <ItemGroup>
+    <Reference Include="0Harmony">
+      <HintPath>$(STS2GamePath)/SlayTheSpire2.app/Contents/Resources/data_sts2_macos_arm64/0Harmony.dll</HintPath>
+    </Reference>
+    <Reference Include="sts2">
+      <HintPath>$(STS2GamePath)/SlayTheSpire2.app/Contents/Resources/data_sts2_macos_arm64/sts2.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+
   <Target Name="CopyToMods" AfterTargets="Build">
     <Copy SourceFiles="$(OutputPath)$(AssemblyName).dll"
           DestinationFolder="$(STS2GamePath)/mods/$(AssemblyName)" />
