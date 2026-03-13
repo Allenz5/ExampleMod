@@ -1,6 +1,6 @@
 using HarmonyLib;
 using MegaCrit.Sts2.Core.Entities.Creatures;
-using MegaCrit.Sts2.Core.Values;
+using MegaCrit.Sts2.Core.ValueProps;
 
 [HarmonyPatch(typeof(Creature), nameof(Creature.LoseHpInternal))]
 public static class NoDamagePatch
