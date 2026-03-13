@@ -22,7 +22,13 @@
   </ItemGroup>
 
   <Target Name="CopyToMods" AfterTargets="Build">
+    <!-- Export the Godot resource pack from pack/ so the game mod loader can detect it -->
+    <Exec Command="&quot;$(GodotExePath)&quot; --headless --path &quot;$(MSBuildProjectDirectory)/pack&quot; --export-pack &quot;macOS&quot; &quot;$(OutputPath)$(AssemblyName).pck&quot;" />
+
+    <!-- Copy both the PCK and DLL to the mods directory (game requires both) -->
     <Copy SourceFiles="$(OutputPath)$(AssemblyName).dll"
+          DestinationFolder="$(STS2GamePath)/mods/$(AssemblyName)" />
+    <Copy SourceFiles="$(OutputPath)$(AssemblyName).pck"
           DestinationFolder="$(STS2GamePath)/mods/$(AssemblyName)" />
   </Target>
 </Project>
