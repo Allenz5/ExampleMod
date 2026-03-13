@@ -23,7 +23,8 @@
 
   <Target Name="CopyToMods" AfterTargets="Build">
     <!-- Export the Godot resource pack from pack/ so the game mod loader can detect it -->
-    <Exec Command="&quot;$(GodotExePath)&quot; --headless --path &quot;$(MSBuildProjectDirectory)/pack&quot; --export-pack &quot;macOS&quot; &quot;$(OutputPath)$(AssemblyName).pck&quot;" />
+    <Exec Command="&quot;$(GodotExePath)&quot; --headless --path &quot;$(MSBuildProjectDirectory)/pack&quot; --export-pack &quot;macOS&quot; &quot;$(OutputPath)$(AssemblyName).pck&quot;"
+          IgnoreStandardErrorWarningFormat="true" />
 
     <!-- Copy both the PCK and DLL to the mods directory (game requires both) -->
     <Copy SourceFiles="$(OutputPath)$(AssemblyName).dll"
