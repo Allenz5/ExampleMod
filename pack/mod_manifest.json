@@ -1,6 +1,6 @@
 {
-  "name": "Example Mod",
-  "version": "0.1.0",
+  "name": "No Damage Mod",
+  "version": "1.0.0",
   "author": "YourName",
-  "description": "A brief description."
+  "description": "Player characters cannot lose health."
 }
