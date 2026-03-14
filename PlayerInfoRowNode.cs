@@ -24,6 +24,7 @@ public partial class PlayerInfoRowNode : VBoxContainer
     {
         AddThemeConstantOverride("separation", 2);
         SizeFlagsHorizontal = SizeFlags.ExpandFill;
+        SizeFlagsVertical = SizeFlags.ShrinkBegin;
 
         _nameLabel = new Label();
         _nameLabel.AddThemeColorOverride("font_color", new Color(1f, 0.9f, 0.6f));

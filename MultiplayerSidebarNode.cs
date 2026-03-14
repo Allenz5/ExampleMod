@@ -78,6 +78,7 @@ public partial class MultiplayerSidebarNode : Control
         _playerListContainer = new VBoxContainer();
         _playerListContainer.AddThemeConstantOverride("separation", 6);
         _playerListContainer.SizeFlagsHorizontal = SizeFlags.ExpandFill;
+        _playerListContainer.SizeFlagsVertical = SizeFlags.ShrinkBegin;
         scroll.AddChild(_playerListContainer);
 
         // Toggle button on the right edge
