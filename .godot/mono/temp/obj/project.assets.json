@@ -88,25 +88,26 @@
     ]
   },
   "packageFolders": {
-    "/Users/allenzhang/.nuget/packages/": {}
+    "C:\\Users\\allen\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/private/var/folders/4t/sf7c1t496vs6h7rsw0k_rh_80000gn/T/dave-tasks/1773362759166/ExampleMod.csproj",
+      "projectUniqueName": "C:\\Users\\allen\\Desktop\\ExampleMod\\ExampleMod.csproj",
       "projectName": "ExampleMod",
-      "projectPath": "/private/var/folders/4t/sf7c1t496vs6h7rsw0k_rh_80000gn/T/dave-tasks/1773362759166/ExampleMod.csproj",
-      "packagesPath": "/Users/allenzhang/.nuget/packages/",
-      "outputPath": "/private/var/folders/4t/sf7c1t496vs6h7rsw0k_rh_80000gn/T/dave-tasks/1773362759166/.godot/mono/temp/obj/",
+      "projectPath": "C:\\Users\\allen\\Desktop\\ExampleMod\\ExampleMod.csproj",
+      "packagesPath": "C:\\Users\\allen\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\allen\\Desktop\\ExampleMod\\.godot\\mono\\temp\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "/Users/allenzhang/.nuget/NuGet/NuGet.Config"
+        "C:\\Users\\allen\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
         "net9.0"
       ],
       "sources": {
-        "/opt/homebrew/Cellar/dotnet@9/9.0.115/libexec/library-packs": {},
+        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
@@ -125,7 +126,7 @@
         "auditLevel": "low",
         "auditMode": "direct"
       },
-      "SdkAnalysisLevel": "9.0.100"
+      "SdkAnalysisLevel": "9.0.300"
     },
     "frameworks": {
       "net9.0": {
@@ -163,7 +164,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "/opt/homebrew/Cellar/dotnet@9/9.0.115/libexec/sdk/9.0.115/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.312/PortableRuntimeIdentifierGraph.json"
       }
     }
   }

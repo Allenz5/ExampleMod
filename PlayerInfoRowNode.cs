@@ -5,6 +5,7 @@ public partial class PlayerInfoRowNode : VBoxContainer
 {
     private Player _player;
     private Player? _localPlayer;
+    private GoldTransferService? _goldTransferService;
     private Label _nameLabel;
     private Label _damageDealtLabel;
     private Label _damageTakenLabel;
@@ -12,10 +13,11 @@ public partial class PlayerInfoRowNode : VBoxContainer
     private SpinBox? _amountInput;
     private Button? _sendButton;
 
-    public void Initialize(Player player, Player? localPlayer)
+    public void Initialize(Player player, Player? localPlayer, GoldTransferService? goldTransferService = null)
     {
         _player = player;
         _localPlayer = localPlayer;
+        _goldTransferService = goldTransferService;
         BuildUI();
         UpdateDisplay();
     }
@@ -85,7 +87,13 @@ public partial class PlayerInfoRowNode : VBoxContainer
         if (_localPlayer == null || _player == null || _amountInput == null) return;
         int amount = (int)_amountInput.Value;
         if (amount <= 0 || _localPlayer.Gold < amount) return;
-        _localPlayer.Gold -= amount;
-        _player.Gold += amount;
+
+        if (_goldTransferService != null)
+            _goldTransferService.SendGold(_localPlayer, _player, amount);
+        else
+        {
+            _localPlayer.Gold -= amount;
+            _player.Gold += amount;
+        }
     }
 }

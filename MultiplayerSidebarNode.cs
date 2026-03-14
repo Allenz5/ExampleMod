@@ -15,20 +15,28 @@ public partial class MultiplayerSidebarNode : Control
     private bool _collapsed = false;
     private Tween? _tween;
     private readonly List<PlayerInfoRowNode> _rows = new();
+    private GoldTransferService? _goldTransferService;
 
     public void Initialize(IRunState runState)
     {
         BuildUI();
 
         var localPlayer = LocalContext.GetMe(runState.Players);
+        _goldTransferService = new GoldTransferService(runState);
 
         foreach (var player in runState.Players)
         {
             var row = new PlayerInfoRowNode();
             _playerListContainer.AddChild(row);
-            row.Initialize(player, localPlayer);
+            row.Initialize(player, localPlayer, _goldTransferService);
             _rows.Add(row);
         }
+    }
+
+    public override void _ExitTree()
+    {
+        _goldTransferService?.Dispose();
+        _goldTransferService = null;
     }
 
     private void BuildUI()

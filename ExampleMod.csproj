@@ -14,22 +14,22 @@
 
   <ItemGroup>
     <Reference Include="0Harmony">
-      <HintPath>$(STS2GamePath)/SlayTheSpire2.app/Contents/Resources/data_sts2_macos_arm64/0Harmony.dll</HintPath>
+      <HintPath>$(STS2GamePath)/data_sts2_windows_x86_64/0Harmony.dll</HintPath>
     </Reference>
     <Reference Include="sts2">
-      <HintPath>$(STS2GamePath)/SlayTheSpire2.app/Contents/Resources/data_sts2_macos_arm64/sts2.dll</HintPath>
+      <HintPath>$(STS2GamePath)/data_sts2_windows_x86_64/sts2.dll</HintPath>
     </Reference>
   </ItemGroup>
 
   <Target Name="CopyToMods" AfterTargets="Build">
     <!-- Export the Godot resource pack from pack/ so the game mod loader can detect it -->
-    <Exec Command="&quot;$(GodotExePath)&quot; --headless --path &quot;$(MSBuildProjectDirectory)/pack&quot; --export-pack &quot;macOS&quot; &quot;$(OutputPath)$(AssemblyName).pck&quot;"
+    <Exec Command="&quot;$(GodotExePath)&quot; --headless --path &quot;$(MSBuildProjectDirectory)/pack&quot; --export-pack &quot;Windows Desktop&quot; &quot;$(OutputPath)$(AssemblyName).pck&quot;"
           IgnoreStandardErrorWarningFormat="true" />
 
     <!-- Copy both the PCK and DLL to the mods directory (game requires both) -->
     <Copy SourceFiles="$(OutputPath)$(AssemblyName).dll"
-          DestinationFolder="$(STS2GamePath)/SlayTheSpire2.app/Contents/MacOS/mods/$(AssemblyName)" />
+          DestinationFolder="$(STS2GamePath)/mods/$(AssemblyName)" />
     <Copy SourceFiles="$(OutputPath)$(AssemblyName).pck"
-          DestinationFolder="$(STS2GamePath)/SlayTheSpire2.app/Contents/MacOS/mods/$(AssemblyName)" />
+          DestinationFolder="$(STS2GamePath)/mods/$(AssemblyName)" />
   </Target>
 </Project>

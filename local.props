@@ -1,6 +1,6 @@
 <Project>
   <PropertyGroup>
-    <STS2GamePath>/Users/allenzhang/Library/Application Support/Steam/steamapps/common/Slay the Spire 2</STS2GamePath>
-    <GodotExePath>/Applications/Godot.app/Contents/MacOS/Godot</GodotExePath>
+    <STS2GamePath>C:\Program Files (x86)\Steam\steamapps\common\Slay the Spire 2</STS2GamePath>
+    <GodotExePath>C:\Program Files (x86)\Godot_v4.5.1-stable_mono_win64\Godot_v4.5.1-stable_mono_win64\Godot_v4.5.1-stable_mono_win64.exe</GodotExePath>
   </PropertyGroup>
 </Project>
