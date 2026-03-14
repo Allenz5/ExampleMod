@@ -5,10 +5,11 @@ using MegaCrit.Sts2.Core.ValueProps;
 [HarmonyPatch(typeof(Creature), nameof(Creature.LoseHpInternal))]
 public static class NoDamagePatch
 {
-    static bool Prefix(Creature __instance, ValueProp props, ref DamageResult __result)
+    static bool Prefix(Creature __instance, decimal amount, ValueProp props, ref DamageResult __result)
     {
         if (__instance.Player != null)
         {
+            DamageTracker.RecordTaken(__instance.Player, (int)amount);
             __result = new DamageResult(__instance, props)
             {
                 UnblockedDamage = 0,

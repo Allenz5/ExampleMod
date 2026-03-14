@@ -5,7 +5,8 @@ public partial class PlayerInfoRowNode : Control
 {
     private Player _player;
     private Label _nameLabel;
-    private Label _hpLabel;
+    private Label _damageDealtLabel;
+    private Label _damageTakenLabel;
     private Label _goldLabel;
 
     public void Initialize(Player player)
@@ -25,8 +26,11 @@ public partial class PlayerInfoRowNode : Control
         _nameLabel.AddThemeColorOverride("font_color", new Color(1f, 0.9f, 0.6f));
         vbox.AddChild(_nameLabel);
 
-        _hpLabel = new Label();
-        vbox.AddChild(_hpLabel);
+        _damageDealtLabel = new Label();
+        vbox.AddChild(_damageDealtLabel);
+
+        _damageTakenLabel = new Label();
+        vbox.AddChild(_damageTakenLabel);
 
         _goldLabel = new Label();
         vbox.AddChild(_goldLabel);
@@ -41,16 +45,8 @@ public partial class PlayerInfoRowNode : Control
         if (_player == null) return;
 
         _nameLabel.Text = _player.Character?.Id.Entry ?? "Unknown";
-
-        if (_player.Creature != null)
-        {
-            _hpLabel.Text = $"HP: {_player.Creature.CurrentHp} / {_player.Creature.MaxHp}";
-        }
-        else
-        {
-            _hpLabel.Text = "HP: --";
-        }
-
+        _damageDealtLabel.Text = $"Dmg Dealt: {DamageTracker.GetDealt(_player)}";
+        _damageTakenLabel.Text = $"Dmg Taken: {DamageTracker.GetTaken(_player)}";
         _goldLabel.Text = $"Gold: {_player.Gold}";
     }
 }
