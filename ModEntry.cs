@@ -5,8 +5,8 @@ public partial class ModEntry : Node
 {
     public override void _Ready()
     {
-        var harmony = new Harmony("com.example.nodamagemod");
+        var harmony = new Harmony("com.mod.multiplayersidebar");
         harmony.PatchAll();
-        GD.Print("[NoDamageMod] Loaded! Player characters will not lose HP.");
+        GD.Print("[MultiplayerSidebarMod] Loaded! Sidebar will appear in all runs.");
     }
 }
