@@ -1,7 +1,7 @@
 using Godot;
 using MegaCrit.Sts2.Core.Entities.Players;
 
-public partial class PlayerInfoRowNode : Control
+public partial class PlayerInfoRowNode : VBoxContainer
 {
     private Player _player;
     private Player? _localPlayer;
@@ -22,22 +22,21 @@ public partial class PlayerInfoRowNode : Control
 
     private void BuildUI()
     {
-        var vbox = new VBoxContainer();
-        vbox.AddThemeConstantOverride("separation", 2);
-        AddChild(vbox);
+        AddThemeConstantOverride("separation", 2);
+        SizeFlagsHorizontal = SizeFlags.ExpandFill;
 
         _nameLabel = new Label();
         _nameLabel.AddThemeColorOverride("font_color", new Color(1f, 0.9f, 0.6f));
-        vbox.AddChild(_nameLabel);
+        AddChild(_nameLabel);
 
         _damageDealtLabel = new Label();
-        vbox.AddChild(_damageDealtLabel);
+        AddChild(_damageDealtLabel);
 
         _damageTakenLabel = new Label();
-        vbox.AddChild(_damageTakenLabel);
+        AddChild(_damageTakenLabel);
 
         _goldLabel = new Label();
-        vbox.AddChild(_goldLabel);
+        AddChild(_goldLabel);
 
         if (_localPlayer != null && !ReferenceEquals(_localPlayer, _player))
         {
@@ -57,12 +56,12 @@ public partial class PlayerInfoRowNode : Control
             _sendButton.Pressed += OnSendGold;
             sendRow.AddChild(_sendButton);
 
-            vbox.AddChild(sendRow);
+            AddChild(sendRow);
         }
 
         var sep = new HSeparator();
         sep.AddThemeConstantOverride("separation", 4);
-        vbox.AddChild(sep);
+        AddChild(sep);
     }
 
     public void UpdateDisplay()
