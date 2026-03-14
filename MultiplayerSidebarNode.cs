@@ -1,4 +1,5 @@
 using Godot;
+using MegaCrit.Sts2.Core.Context;
 using MegaCrit.Sts2.Core.Runs;
 using System.Collections.Generic;
 
@@ -19,11 +20,13 @@ public partial class MultiplayerSidebarNode : Control
     {
         BuildUI();
 
+        var localPlayer = LocalContext.GetMe(runState.Players);
+
         foreach (var player in runState.Players)
         {
             var row = new PlayerInfoRowNode();
             _playerListContainer.AddChild(row);
-            row.Initialize(player);
+            row.Initialize(player, localPlayer);
             _rows.Add(row);
         }
     }
