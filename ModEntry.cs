@@ -7,9 +7,9 @@ public class ModEntry
 {
     public static void Initialize()
     {
-        var harmony = new Harmony("com.example.nodamagemod");
+        var harmony = new Harmony("com.example.examplemod");
         harmony.PatchAll();
-        GD.Print("[NoDamageMod] Loaded! Player characters will not lose HP.");
+        GD.Print("[ExampleMod] Loaded!");
 
     }
 }
