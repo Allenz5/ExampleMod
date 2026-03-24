@@ -70,19 +70,19 @@
           }
         }
       },
-      "SmartFormat/3.0.0.0": {
-        "runtime": {
-          "SmartFormat.dll": {
-            "assemblyVersion": "3.0.0.0",
-            "fileVersion": "3.3.0.704"
-          }
-        }
-      },
       "Sentry/5.0.0.0": {
         "runtime": {
           "Sentry.dll": {
             "assemblyVersion": "5.0.0.0",
             "fileVersion": "5.0.0.0"
+          }
+        }
+      },
+      "SmartFormat/3.0.0.0": {
+        "runtime": {
+          "SmartFormat.dll": {
+            "assemblyVersion": "3.0.0.0",
+            "fileVersion": "3.3.0.704"
           }
         }
       },
@@ -183,12 +183,12 @@
       "serviceable": false,
       "sha512": ""
     },
-    "SmartFormat/3.0.0.0": {
+    "Sentry/5.0.0.0": {
       "type": "reference",
       "serviceable": false,
       "sha512": ""
     },
-    "Sentry/5.0.0.0": {
+    "SmartFormat/3.0.0.0": {
       "type": "reference",
       "serviceable": false,
       "sha512": ""

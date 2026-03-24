@@ -1,7 +1,10 @@
 {
-  "pck_name": "ExampleMod",
+  "id": "ExampleMod",
   "name": "Multiplayer Sidebar",
   "version": "1.0.0",
   "author": "YourName",
-  "description": "Adds a collapsible sidebar showing all players and their stats in any run."
+  "description": "Adds a collapsible sidebar showing all players and their stats in any run.",
+  "has_dll": true,
+  "has_pck": true,
+  "affects_gameplay": false
 }

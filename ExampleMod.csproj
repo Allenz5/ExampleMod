@@ -26,10 +26,12 @@
     <Exec Command="&quot;$(GodotExePath)&quot; --headless --path &quot;$(MSBuildProjectDirectory)/pack&quot; --export-pack &quot;Windows Desktop&quot; &quot;$(OutputPath)$(AssemblyName).pck&quot;"
           IgnoreStandardErrorWarningFormat="true" />
 
-    <!-- Copy both the PCK and DLL to the mods directory (game requires both) -->
+    <!-- Copy DLL, PCK, and manifest JSON to the mods directory -->
     <Copy SourceFiles="$(OutputPath)$(AssemblyName).dll"
           DestinationFolder="$(STS2GamePath)/mods/$(AssemblyName)" />
     <Copy SourceFiles="$(OutputPath)$(AssemblyName).pck"
+          DestinationFolder="$(STS2GamePath)/mods/$(AssemblyName)" />
+    <Copy SourceFiles="$(MSBuildProjectDirectory)/pack/mod_manifest.json"
           DestinationFolder="$(STS2GamePath)/mods/$(AssemblyName)" />
   </Target>
 </Project>

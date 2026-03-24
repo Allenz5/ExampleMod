@@ -6,7 +6,7 @@ using System.Runtime.CompilerServices;
 namespace System.Text.RegularExpressions.Generated;
 
 [GeneratedCode("System.Text.RegularExpressions.Generator", "9.0.12.31616")]
-internal static class _003CRegexGenerator_g_003EFDF0533EE0711AEDB383B6CD4472EB7858DDC4C8D92DA17B11D90839AAF25C6DD__Utilities
+internal static class _003CRegexGenerator_g_003EFACC081AAF3D765EFF87A82C4FBB77F6FD3EA759AA2D03D993988F88E97CC0B5B__Utilities
 {
 	internal static readonly TimeSpan s_defaultTimeout = ((AppContext.GetData("REGEX_DEFAULT_MATCH_TIMEOUT") is TimeSpan timeSpan) ? timeSpan : Regex.InfiniteMatchTimeout);
 
@@ -51,7 +51,7 @@ internal static class _003CRegexGenerator_g_003EFDF0533EE0711AEDB383B6CD4472EB78
 		return (readOnlySpan[num] & (1 << (ch & 7))) != 0;
 	}
 
-	static _003CRegexGenerator_g_003EFDF0533EE0711AEDB383B6CD4472EB7858DDC4C8D92DA17B11D90839AAF25C6DD__Utilities()
+	static _003CRegexGenerator_g_003EFACC081AAF3D765EFF87A82C4FBB77F6FD3EA759AA2D03D993988F88E97CC0B5B__Utilities()
 	{
 		string reference = "76561";
 		s_indexOfString_76561_Ordinal = SearchValues.Create(new ReadOnlySpan<string>(in reference), StringComparison.Ordinal);

@@ -3,7 +3,7 @@ using System.CodeDom.Compiler;
 namespace System.Text.RegularExpressions.Generated;
 
 [GeneratedCode("System.Text.RegularExpressions.Generator", "9.0.12.31616")]
-internal sealed class _003CRegexGenerator_g_003EFDF0533EE0711AEDB383B6CD4472EB7858DDC4C8D92DA17B11D90839AAF25C6DD__WhitespaceRegex_2 : Regex
+internal sealed class _003CRegexGenerator_g_003EFACC081AAF3D765EFF87A82C4FBB77F6FD3EA759AA2D03D993988F88E97CC0B5B__WhitespaceRegex_2 : Regex
 {
 	private sealed class RunnerFactory : RegexRunnerFactory
 	{
@@ -14,7 +14,7 @@ internal sealed class _003CRegexGenerator_g_003EFDF0533EE0711AEDB383B6CD4472EB78
 				while (TryFindNextPossibleStartingPosition(inputSpan) && !TryMatchAtCurrentPosition(inputSpan) && runtextpos != inputSpan.Length)
 				{
 					runtextpos++;
-					if (_003CRegexGenerator_g_003EFDF0533EE0711AEDB383B6CD4472EB7858DDC4C8D92DA17B11D90839AAF25C6DD__Utilities.s_hasTimeout)
+					if (_003CRegexGenerator_g_003EFACC081AAF3D765EFF87A82C4FBB77F6FD3EA759AA2D03D993988F88E97CC0B5B__Utilities.s_hasTimeout)
 					{
 						CheckTimeout();
 					}
@@ -26,7 +26,7 @@ internal sealed class _003CRegexGenerator_g_003EFDF0533EE0711AEDB383B6CD4472EB78
 				int num = runtextpos;
 				if ((uint)num < (uint)inputSpan.Length)
 				{
-					int num2 = inputSpan.Slice(num).IndexOfAny(_003CRegexGenerator_g_003EFDF0533EE0711AEDB383B6CD4472EB7858DDC4C8D92DA17B11D90839AAF25C6DD__Utilities.s_whitespace);
+					int num2 = inputSpan.Slice(num).IndexOfAny(_003CRegexGenerator_g_003EFACC081AAF3D765EFF87A82C4FBB77F6FD3EA759AA2D03D993988F88E97CC0B5B__Utilities.s_whitespace);
 					if (num2 >= 0)
 					{
 						runtextpos = num + num2;
@@ -62,14 +62,14 @@ internal sealed class _003CRegexGenerator_g_003EFDF0533EE0711AEDB383B6CD4472EB78
 		}
 	}
 
-	internal static readonly _003CRegexGenerator_g_003EFDF0533EE0711AEDB383B6CD4472EB7858DDC4C8D92DA17B11D90839AAF25C6DD__WhitespaceRegex_2 Instance = new _003CRegexGenerator_g_003EFDF0533EE0711AEDB383B6CD4472EB7858DDC4C8D92DA17B11D90839AAF25C6DD__WhitespaceRegex_2();
+	internal static readonly _003CRegexGenerator_g_003EFACC081AAF3D765EFF87A82C4FBB77F6FD3EA759AA2D03D993988F88E97CC0B5B__WhitespaceRegex_2 Instance = new _003CRegexGenerator_g_003EFACC081AAF3D765EFF87A82C4FBB77F6FD3EA759AA2D03D993988F88E97CC0B5B__WhitespaceRegex_2();
 
-	private _003CRegexGenerator_g_003EFDF0533EE0711AEDB383B6CD4472EB7858DDC4C8D92DA17B11D90839AAF25C6DD__WhitespaceRegex_2()
+	private _003CRegexGenerator_g_003EFACC081AAF3D765EFF87A82C4FBB77F6FD3EA759AA2D03D993988F88E97CC0B5B__WhitespaceRegex_2()
 	{
 		pattern = "\\s+";
 		roptions = RegexOptions.None;
-		Regex.ValidateMatchTimeout(_003CRegexGenerator_g_003EFDF0533EE0711AEDB383B6CD4472EB7858DDC4C8D92DA17B11D90839AAF25C6DD__Utilities.s_defaultTimeout);
-		internalMatchTimeout = _003CRegexGenerator_g_003EFDF0533EE0711AEDB383B6CD4472EB7858DDC4C8D92DA17B11D90839AAF25C6DD__Utilities.s_defaultTimeout;
+		Regex.ValidateMatchTimeout(_003CRegexGenerator_g_003EFACC081AAF3D765EFF87A82C4FBB77F6FD3EA759AA2D03D993988F88E97CC0B5B__Utilities.s_defaultTimeout);
+		internalMatchTimeout = _003CRegexGenerator_g_003EFACC081AAF3D765EFF87A82C4FBB77F6FD3EA759AA2D03D993988F88E97CC0B5B__Utilities.s_defaultTimeout;
 		factory = new RunnerFactory();
 		capsize = 1;
 	}

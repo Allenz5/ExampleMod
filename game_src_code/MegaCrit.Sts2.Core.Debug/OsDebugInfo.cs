@@ -5,6 +5,8 @@ using System.Threading.Tasks;
 using Godot;
 using Godot.Collections;
 using MegaCrit.Sts2.Core.Logging;
+using SharpGen.Runtime;
+using Vortice.DXGI;
 
 namespace MegaCrit.Sts2.Core.Debug;
 
@@ -191,17 +193,39 @@ public static class OsDebugInfo
 		handler.AppendLiteral("Rendering device name: ");
 		handler.AppendFormatted(renderingDevice?.GetDeviceName() ?? "N/A (headless)");
 		stringBuilder29.AppendLine(ref handler);
+		if (DXGI.CreateDXGIFactory1<IDXGIFactory1>(out IDXGIFactory1 factory) == Result.Ok)
+		{
+			IDXGIAdapter1 adapterOut;
+			for (uint num = 0u; factory.EnumAdapters1(num, out adapterOut) == Result.Ok; num++)
+			{
+				adapterOut.CheckInterfaceSupport(typeof(IDXGIDevice), out var userModeDriverVersion);
+				stringBuilder2 = stringBuilder;
+				StringBuilder stringBuilder30 = stringBuilder2;
+				handler = new StringBuilder.AppendInterpolatedStringHandler(21, 2, stringBuilder2);
+				handler.AppendLiteral("  Graphics adapter ");
+				handler.AppendFormatted(num);
+				handler.AppendLiteral(": ");
+				handler.AppendFormatted(adapterOut.Description.Description);
+				stringBuilder30.AppendLine(ref handler);
+				global::_003C_003Ey__InlineArray4<object> buffer = default(global::_003C_003Ey__InlineArray4<object>);
+				global::_003CPrivateImplementationDetails_003E.InlineArrayElementRef<global::_003C_003Ey__InlineArray4<object>, object>(ref buffer, 0) = userModeDriverVersion >> 48;
+				global::_003CPrivateImplementationDetails_003E.InlineArrayElementRef<global::_003C_003Ey__InlineArray4<object>, object>(ref buffer, 1) = (userModeDriverVersion >> 32) & 0xFFFF;
+				global::_003CPrivateImplementationDetails_003E.InlineArrayElementRef<global::_003C_003Ey__InlineArray4<object>, object>(ref buffer, 2) = (userModeDriverVersion >> 16) & 0xFFFF;
+				global::_003CPrivateImplementationDetails_003E.InlineArrayElementRef<global::_003C_003Ey__InlineArray4<object>, object>(ref buffer, 3) = (userModeDriverVersion >> 32) & 0xFFFF;
+				stringBuilder.AppendLine(string.Format("  version: {0}.{1}.{2}.{3}", global::_003CPrivateImplementationDetails_003E.InlineArrayAsReadOnlySpan<global::_003C_003Ey__InlineArray4<object>, object>(in buffer, 4)));
+			}
+		}
 		stringBuilder2 = stringBuilder;
-		StringBuilder stringBuilder30 = stringBuilder2;
+		StringBuilder stringBuilder31 = stringBuilder2;
 		handler = new StringBuilder.AppendInterpolatedStringHandler(23, 1, stringBuilder2);
 		handler.AppendLiteral("Screen info (primary ");
 		handler.AppendFormatted(DisplayServer.GetPrimaryScreen());
 		handler.AppendLiteral("):");
-		stringBuilder30.AppendLine(ref handler);
+		stringBuilder31.AppendLine(ref handler);
 		for (int i = 0; i < DisplayServer.GetScreenCount(); i++)
 		{
 			stringBuilder2 = stringBuilder;
-			StringBuilder stringBuilder31 = stringBuilder2;
+			StringBuilder stringBuilder32 = stringBuilder2;
 			handler = new StringBuilder.AppendInterpolatedStringHandler(59, 6, stringBuilder2);
 			handler.AppendLiteral("  Index ");
 			handler.AppendFormatted(i);
@@ -216,15 +240,15 @@ public static class OsDebugInfo
 			handler.AppendFormatted(DisplayServer.ScreenGetDpi());
 			handler.AppendLiteral(" Refresh Rate: ");
 			handler.AppendFormatted(DisplayServer.ScreenGetRefreshRate());
-			stringBuilder31.AppendLine(ref handler);
+			stringBuilder32.AppendLine(ref handler);
 		}
 		ulong renderingInfo = RenderingServer.GetRenderingInfo(RenderingServer.RenderingInfo.VideoMemUsed);
 		stringBuilder2 = stringBuilder;
-		StringBuilder stringBuilder32 = stringBuilder2;
+		StringBuilder stringBuilder33 = stringBuilder2;
 		handler = new StringBuilder.AppendInterpolatedStringHandler(19, 1, stringBuilder2);
 		handler.AppendLiteral("Video Memory Used: ");
 		handler.AppendFormatted(FormatBytes(renderingInfo));
-		stringBuilder32.AppendLine(ref handler);
+		stringBuilder33.AppendLine(ref handler);
 		Dictionary memoryInfo = OS.GetMemoryInfo();
 		if (memoryInfo.Count > 0)
 		{
@@ -232,27 +256,27 @@ public static class OsDebugInfo
 			foreach (KeyValuePair<Variant, Variant> item in memoryInfo)
 			{
 				stringBuilder2 = stringBuilder;
-				StringBuilder stringBuilder33 = stringBuilder2;
+				StringBuilder stringBuilder34 = stringBuilder2;
 				handler = new StringBuilder.AppendInterpolatedStringHandler(4, 2, stringBuilder2);
 				handler.AppendLiteral("  ");
 				handler.AppendFormatted(item.Key);
 				handler.AppendLiteral(": ");
 				handler.AppendFormatted(FormatBytes((ulong)item.Value));
-				stringBuilder33.AppendLine(ref handler);
+				stringBuilder34.AppendLine(ref handler);
 			}
 		}
 		stringBuilder2 = stringBuilder;
-		StringBuilder stringBuilder34 = stringBuilder2;
+		StringBuilder stringBuilder35 = stringBuilder2;
 		handler = new StringBuilder.AppendInterpolatedStringHandler(23, 1, stringBuilder2);
 		handler.AppendLiteral("  Static Memory Usage: ");
 		handler.AppendFormatted(FormatBytes(OS.GetStaticMemoryUsage()));
-		stringBuilder34.AppendLine(ref handler);
+		stringBuilder35.AppendLine(ref handler);
 		stringBuilder2 = stringBuilder;
-		StringBuilder stringBuilder35 = stringBuilder2;
+		StringBuilder stringBuilder36 = stringBuilder2;
 		handler = new StringBuilder.AppendInterpolatedStringHandler(28, 1, stringBuilder2);
 		handler.AppendLiteral("  Static Memory Peak Usage: ");
 		handler.AppendFormatted(FormatBytes(OS.GetStaticMemoryPeakUsage()));
-		stringBuilder35.AppendLine(ref handler);
+		stringBuilder36.AppendLine(ref handler);
 		string[] grantedPermissions = OS.GetGrantedPermissions();
 		if (grantedPermissions.Length != 0)
 		{
@@ -261,11 +285,11 @@ public static class OsDebugInfo
 			foreach (string value in array)
 			{
 				stringBuilder2 = stringBuilder;
-				StringBuilder stringBuilder36 = stringBuilder2;
+				StringBuilder stringBuilder37 = stringBuilder2;
 				handler = new StringBuilder.AppendInterpolatedStringHandler(2, 1, stringBuilder2);
 				handler.AppendLiteral("  ");
 				handler.AppendFormatted(value);
-				stringBuilder36.AppendLine(ref handler);
+				stringBuilder37.AppendLine(ref handler);
 			}
 		}
 		string[] array2 = new string[5] { "PATH", "GODOT_ROOT_DIR", "HOME", "DYLD_LIBRARY_PATH", "LD_LIBRARY_PATH" };
@@ -274,13 +298,13 @@ public static class OsDebugInfo
 		foreach (string text in array3)
 		{
 			stringBuilder2 = stringBuilder;
-			StringBuilder stringBuilder37 = stringBuilder2;
+			StringBuilder stringBuilder38 = stringBuilder2;
 			handler = new StringBuilder.AppendInterpolatedStringHandler(4, 2, stringBuilder2);
 			handler.AppendLiteral("  ");
 			handler.AppendFormatted(text);
 			handler.AppendLiteral(": ");
 			handler.AppendFormatted(OS.GetEnvironment(text));
-			stringBuilder37.AppendLine(ref handler);
+			stringBuilder38.AppendLine(ref handler);
 		}
 		return stringBuilder.ToString();
 	}
